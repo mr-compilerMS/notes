@@ -1,0 +1,9 @@
+.form-control {
+  box-shadow: none;
+}
+.form-control::placeholder {
+  font-weight: bold;
+}
+.card-focused {
+  box-shadow: 0 8px 46px -4px rgba(37, 72, 125, 0.656);
+}

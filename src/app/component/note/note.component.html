@@ -1,0 +1,26 @@
+<div class="m-1 mt-2 row">
+  <div class="col-11">{{ note.title }}</div>
+  <div class="col-1">
+    <i class="bi-heart" *ngIf="!note.favorite"></i>
+    <i class="bi-heart-fill text-danger" *ngIf="note.favorite"></i>
+  </div>
+</div>
+<div class="card-body" [ngClass]="'note-' + note.id">
+  {{ note.note }}
+</div>
+<div class="card-footer">
+  <div>
+    <a *ngFor="let url of note.urls" class="mx-1" [href]="url" target="_blank">
+      <img
+        [src]="'https://s2.googleusercontent.com/s2/favicons?domain_url=' + url"
+        width="24px"
+        height="24px"
+      />
+    </a>
+  </div>
+  <div>
+    <span *ngFor="let tag of note.tags" class="badge text-bg-info mx-1">{{
+      tag
+    }}</span>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<app-add-note (addNote)="addNewNote($event)"></app-add-note>
+<div class="masonry">
+  <app-note
+    *ngFor="let note of notes"
+    [note]="note"
+    (click)="editNote(note); openModal()"
+    class="card bg-dark col-6 border-secondary"
+  >
+  </app-note>
+</div>
