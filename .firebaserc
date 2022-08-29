@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "puhu-notes": {
+      "hosting": {
+        "notes": [
+          "puhu-notes"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "puhu-notes"
+  }
+}
