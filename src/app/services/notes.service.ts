@@ -29,8 +29,12 @@ export class NotesService {
   }
 
   deleteNote(note: Note) {
-    this.notes = this.notes.filter((e) => e.id != note.id);
-    this.saveNotes();
+    if (this.notes.indexOf(note) > -1) {
+      this.notes.splice(this.notes.indexOf(note), 1);
+      this.saveNotes();
+      return of(true);
+    }
+    return of(false);
   }
 
   getAllNotes() {

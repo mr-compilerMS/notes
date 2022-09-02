@@ -16,18 +16,20 @@
           <i class="bi-heart" *ngIf="!note.favorite"></i>
           <i class="bi-heart-fill text-danger" *ngIf="note.favorite"></i>
         </div>
+        <div class="btn btn-dark" (click)="deleteNote()">
+          <i class="bi-trash"></i>
+        </div>
       </div>
     </div>
     <textarea
       class="form-control bg-dark text-white border-0"
       placeholder="Take a note..."
-      rows="1"
+      [rows]="windowWidth > 576 ? 1 : 3"
       [(ngModel)]="note.note"
       (focus)="focused = true"
       (focusout)="focused = false"
       id="update-textarea"
       (keyup)="textAreaAdjust($event.target); noteChanged()"
-      style="overflow: hidden"
     >
     </textarea>
   </div>

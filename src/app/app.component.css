@@ -1,0 +1,6 @@
+app-messages {
+  top: 70px;
+  right: 20px;
+  position: fixed;
+  z-index: 999999999;
+}

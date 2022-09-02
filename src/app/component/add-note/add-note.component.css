@@ -7,3 +7,13 @@
 .card-focused {
   box-shadow: 0 8px 46px -4px rgba(37, 72, 125, 0.656);
 }
+
+textarea {
+  overflow: hidden;
+}
+
+@media (max-width: 576px) {
+  textarea {
+    overflow-y: scroll;
+  }
+}

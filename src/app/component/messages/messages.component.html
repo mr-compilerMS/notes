@@ -1,0 +1,7 @@
+<alert
+  *ngFor="let message of messages"
+  [type]="message.type"
+  [dismissOnTimeout]="message.autoDismiss ? 5000 : 999999999999"
+  [dismissible]="true"
+  >{{ message.message }}</alert
+>

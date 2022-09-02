@@ -7,15 +7,16 @@
           <i class="bi-search"></i>
         </div>
         <input
-          [(ngModel)]="searchQuery"
+          [(ngModel)]="query$"
           type="text"
           class="form-control bg-dark search-input text-white"
+          (keyup)="searchQueryChanged()"
           #queryInput
         />
         <button
           class="btn bg-dark border-end border-top border-bottom"
-          [ngClass]="{ 'text-white': searchQuery }"
-          (click)="searchQuery = ''; queryInput.focus()"
+          [ngClass]="{ 'text-white': query$ }"
+          (click)="query$ = ''; queryInput.focus()"
           type="button"
         >
           <i class="bi-x-lg"></i>
@@ -24,14 +25,6 @@
     </div>
     <div class="d-none d-sm-flex">
       <a class="btn btn-link text-primary"><i class="bi-gear h4"></i></a>
-      <div class="form-check form-switch h4 ms-1">
-        <input
-          class="form-check-input bg-dark border-primary mt-2"
-          [(ngModel)]="darkMode"
-          type="checkbox"
-          aria-label="Dark Mode"
-        />
-      </div>
     </div>
   </div>
 </nav>

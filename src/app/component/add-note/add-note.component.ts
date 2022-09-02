@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  PLATFORM_ID,
+} from '@angular/core';
+import { MessageService, MessageType } from 'src/app/services/message.service';
 import Note from '../../models/note';
 import { getHashTags, getUrls } from '../../utils/string-utils';
 @Component({
@@ -12,7 +20,8 @@ export class AddNoteComponent implements OnInit {
   focused = false;
   note: Note = new Note();
   element!: any;
-  constructor() {}
+  windowWidth: number = window.innerWidth;
+  constructor(private messageService: MessageService) {}
 
   ngOnInit(): void {}
 
@@ -22,15 +31,33 @@ export class AddNoteComponent implements OnInit {
   }
   textAreaAdjust(element: any) {
     this.element = element;
-    element.style.height = '1px';
-    element.style.height = element.scrollHeight + 'px';
+    if (window.innerWidth > 576) {
+      element.style.height = '1px';
+      element.style.height = element.scrollHeight + 'px';
+    } else {
+      element.rows = 3;
+    }
   }
   saveNote() {
-    this.addNote.emit(this.note);
+    if (
+      !(
+        this.note.note.trim().length === 0 &&
+        this.note.title.trim().length === 0
+      )
+    )
+      this.addNote.emit(this.note);
+    else {
+      this.messageService.add({
+        message: 'Empty Notes Cannot be saved',
+        type: MessageType.WARNING,
+        autoDismiss: true,
+      });
+      this.clear();
+    }
   }
 
   clear() {
     this.note = new Note();
-    this.element.style.height = '1px';
+    if (this.element) this.element.style.height = '1px';
   }
 }
