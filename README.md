@@ -1,27 +1,16 @@
 # Notes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Live@[Puhu-Notes](https://puhu-notes.web.app/)
 
-## Development server
+## Welcome to our notes taking PWA app!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This app is developed using `Angular 14` and utilizes `local storage` to save your notes. With this app, you can easily take and organize notes on the go. All your notes are saved on your device, so you can access them even without an internet connection.
 
-## Code scaffolding
+You can give your note a title and then add as much content as you want.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To organize your notes, you can use tags. Simply add a "#" followed by the tag you want to use in the body of your note, and the app will automatically create a tag for you.
 
-## Build
+We hope you enjoy using our notes taking app! If you have any questions or feedback, please don't hesitate to contact us. Happy note-taking!
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Screenshot of app](docs/home.jpeg)
+![Screenshot of app](docs/responsive.jpeg)
